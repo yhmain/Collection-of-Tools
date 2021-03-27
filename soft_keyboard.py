@@ -6,16 +6,16 @@
 
 import tkinter as tk
 
-keyboard_value = [
+KEYBOARD = [
     [['Esc'], ['F1'], ['F2'], ['F3'], ['F4'], ['F5'], ['F6'], ['F7'], ['F8'], ['F9'], ['F10'], ['F11'], ['F12'], ['pause'], ['sysrq']],
     [['~', '`'], ['!', '1'], ['@', '2'], ['#', '3'], ['$', '4'], ['%', '5'], ['^', '6'], ['&', '7'], ['*', '8'], ['(', '9'], [')', '0'], ['_', '-'], ['+', '='], ['Back']],
     [['Tab'], ['Q'], ['W'], ['E'], ['R'], ['T'], ['Y'], ['U'], ['I'], ['O'], ['P'], ['{', '['], ['}', ']'], ['|', '\\']],
     [['Caps lock'], ['A'], ['S'], ['D'], ['F'], ['G'], ['H'], ['J'], ['K'], ['L'], [':', ';'], ['\"', ''], ['Enter']],
     [['LShift'], ['Z'], ['X'], ['C'], ['V'], ['B'], ['N'], ['M'], ['<', ','], ['>', '.'], ['?', '/'], ['RShift']],
-    [['Ctrl'], ['Win'], ['Alt'], ['Long Space'], ['Alt Gr'], ['Win'], ['R-clk'], ['RCtrl']]  # Mouse Right
+    [['Ctrl'], ['Win'], ['Alt'], ['Long Space'], ['Alt Gr'], ['Win'], ['R-clk'], ['RCtrl']]  # R-clk Mouse Right
 ]
 
-key_offset = [
+KEY_OFFSET = [
     [[40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [45, 40]],
     [[40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [85, 40]],
     [[75, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [50, 40]],
@@ -81,17 +81,17 @@ class KeyBoard:
     def draw_keyboard(self, password=''):
         # First ,I draw the original keyboard
         start_y = 20
-        for i in range(0, len(keyboard_value)):
+        for i in range(0, len(KEYBOARD)):
             start_x = 20
-            for j in range(len(keyboard_value[i])):
+            for j in range(len(KEYBOARD[i])):
                 p1 = Point(start_x, start_y)
-                p2 = Point(start_x + key_offset[i][j][0], start_y + key_offset[i][j][1])
-                rect = Rectangle(p1, p2, keyboard_value[i][j])
+                p2 = Point(start_x + KEY_OFFSET[i][j][0], start_y + KEY_OFFSET[i][j][1])
+                rect = Rectangle(p1, p2, KEYBOARD[i][j])
                 Key(self.keyboard, rect).draw_key()
-                start_x += key_offset[i][j][0]
-                for k in range(len(keyboard_value[i][j])):
-                    self.key_dict[keyboard_value[i][j][k]] = [p1, p2]
-            start_y += key_offset[i][0][1]
+                start_x += KEY_OFFSET[i][j][0]
+                for k in range(len(KEYBOARD[i][j])):
+                    self.key_dict[KEYBOARD[i][j][k]] = [p1, p2]
+            start_y += KEY_OFFSET[i][0][1]
 
         # Then, show the password on the keyboard
         x0 = -1
