@@ -5,7 +5,7 @@ Project Structures:
 tool_file.py Functions that store some file operations.  
 tool_plot.py A function that plots data.  
 
-Tool:  
+Tool1:  
 tool_character.py Analyze the frequency of each character in the file content, and draw pictures in descending order of frequency.
 
 1.If you want to use it, please import tool_file.py and tool_plot.py.  
