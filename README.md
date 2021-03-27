@@ -1,4 +1,5 @@
-# Collection-of-Tools
+# Collection-of-Tools  
+I developed some visualization tools for analyzing password data sets.  
 Project Structures:
 
 tool_file.py Functions that store some file operations.  
