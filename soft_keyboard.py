@@ -1,19 +1,22 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
+# Reference URL
+# http://patorjk.com/keyboard-layout-analyzer/#/results
+
 import tkinter as tk
 
 keyboard_value = [
-    [['Esc'], ['F1'], ['F2'], ['F3'], ['F4'], ['F5'], ['F6'], ['F7'], ['F8'], ['F9'], ['F10'], ['F11'], ['F12']],
+    [['Esc'], ['F1'], ['F2'], ['F3'], ['F4'], ['F5'], ['F6'], ['F7'], ['F8'], ['F9'], ['F10'], ['F11'], ['F12'], ['pause'], ['sysrq']],
     [['~', '`'], ['!', '1'], ['@', '2'], ['#', '3'], ['$', '4'], ['%', '5'], ['^', '6'], ['&', '7'], ['*', '8'], ['(', '9'], [')', '0'], ['_', '-'], ['+', '='], ['Back']],
     [['Tab'], ['Q'], ['W'], ['E'], ['R'], ['T'], ['Y'], ['U'], ['I'], ['O'], ['P'], ['{', '['], ['}', ']'], ['|', '\\']],
     [['Caps lock'], ['A'], ['S'], ['D'], ['F'], ['G'], ['H'], ['J'], ['K'], ['L'], [':', ';'], ['\"', ''], ['Enter']],
-    [['Shift'], ['Z'], ['X'], ['C'], ['V'], ['B'], ['N'], ['M'], ['<', ','], ['>', '.'], ['?', '/'], ['Shift']],
-    [['Ctrl'], ['Win'], ['Alt'], ['Long Space'], ['Alt'], ['Win'], ['R-clk'], ['Ctrl']]  # Mouse Right
+    [['LShift'], ['Z'], ['X'], ['C'], ['V'], ['B'], ['N'], ['M'], ['<', ','], ['>', '.'], ['?', '/'], ['RShift']],
+    [['Ctrl'], ['Win'], ['Alt'], ['Long Space'], ['Alt Gr'], ['Win'], ['R-clk'], ['RCtrl']]  # Mouse Right
 ]
 
 key_offset = [
-    [[40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40]],
+    [[40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [45, 40]],
     [[40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [85, 40]],
     [[75, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [50, 40]],
     [[80, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [40, 40], [85, 40]],
@@ -59,7 +62,7 @@ class KeyBoard:
 
         self.window = tk.Tk()
         self.window.title('Soft Keyboard')
-        self.window_width = 700
+        self.window_width = 650
         self.window_height = 280
         # The first two parameters are the size of the window,
         # and the last two parameters are the position of the window.
@@ -69,13 +72,16 @@ class KeyBoard:
         self.window.geometry("%dx%d+%d+%d" % (self.window_width, self.window_height,
                                               (screenwidth - self.window_width) / 2,
                                               (screenheight - self.window_height) / 2))
+        # Setting the window is not scalable
+        self.window.minsize(self.window_width, self.window_height)
+        self.window.maxsize(self.window_width, self.window_height)
         # create a new canvas
-        self.keyboard = tk.Canvas(self.window, width=700, height=280, bg="white")
+        self.keyboard = tk.Canvas(self.window, width=self.window_width, height=self.window_height, bg="white")
 
     def draw_keyboard(self, password=''):
         # First ,I draw the original keyboard
         start_y = 20
-        for i in range(1, len(keyboard_value)):
+        for i in range(0, len(keyboard_value)):
             start_x = 20
             for j in range(len(keyboard_value[i])):
                 p1 = Point(start_x, start_y)
