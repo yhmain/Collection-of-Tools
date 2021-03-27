@@ -14,7 +14,8 @@ tool_character.py Analyze the frequency of each character in the file content, a
 soft_keyboard.py 
 1. generate a virtual keyboard   
 2. display the input password track on the keyboard  
-3. The result is shown in figure     
+3. The result is shown in figure   
+    
 ![image](https://github.com/yhmain/Collection-of-Tools/blob/main/Pictures/keyboard.jpg)
 
 Sample: input password 'zxcvbn2345tgb'  
