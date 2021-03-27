@@ -6,9 +6,9 @@ tool_plot.py A function that plots data.
 
 tool_character.py Analyze the frequency of each character in the file content, and draw pictures in descending order of frequency.
 
-1.If you want to use it, please import tool_file.py and tool_plot.py
+1.If you want to use it, please import tool_file.py and tool_plot.py.
 2.The result is shown in figure 
-3.
+
 ![image](https://github.com/yhmain/Collection-of-Tools/blob/main/Pictures/characters.png)
 
 soft_keyboard.py 
