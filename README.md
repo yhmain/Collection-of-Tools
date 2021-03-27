@@ -8,12 +8,12 @@ tool_character.py Analyze the frequency of each character in the file content, a
 
 1.If you want to use it, please import tool_file.py and tool_plot.py
 2.The result is shown in figure 
-https://github.com/yhmain/Collection-of-Tools/raw/mainmaster/Pictures/characters.png
+![image](https://github.com/yhmain/Collection-of-Tools/raw/mainmaster/Pictures/characters.png)
 
 soft_keyboard.py 
 1. generate a virtual keyboard 
 2. display the input password track on the keyboard
 3. The result is shown in figure   
-https://github.com/yhmain/Collection-of-Tools/raw/mainmaster/Pictures/keyboard.jpg
+![image](https://github.com/yhmain/Collection-of-Tools/raw/mainmaster/Pictures/keyboard.jpg)
 
 Sample: input password 'zxcvbn2345tgb'
