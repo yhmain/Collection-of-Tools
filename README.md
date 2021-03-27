@@ -13,5 +13,7 @@ https://github.com/yhmain/Collection-of-Tools/raw/mainmaster/Pictures/characters
 soft_keyboard.py 
 1. generate a virtual keyboard 
 2. display the input password track on the keyboard
-3. The result is shown in figure   Sample: input password 'zxcvbn2345tgb'
+3. The result is shown in figure   
 https://github.com/yhmain/Collection-of-Tools/raw/mainmaster/Pictures/keyboard.jpg
+
+Sample: input password 'zxcvbn2345tgb'
