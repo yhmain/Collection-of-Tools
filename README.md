@@ -18,4 +18,4 @@ soft_keyboard.py
     
 ![image](https://github.com/yhmain/Collection-of-Tools/blob/main/Pictures/keyboard.jpg)
 
-Sample: input password 'zxcvbn2345tgb'  
+Sample input: password 'zxcvbn2345tgb'  
