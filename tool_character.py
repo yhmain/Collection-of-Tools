@@ -1,10 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 
 from tool_file import ToolFile
 from tool_plot import ToolPlot
 
 tf = ToolFile()
-list_files, list_labels = tf.get_dir_files("Hack")      # We put all the data sets under this folder.
+list_files, list_labels = tf.get_dir_files("EN")      # We put all the data sets under this folder.
 
 x_y_data = {}
 size = len(list_labels)
