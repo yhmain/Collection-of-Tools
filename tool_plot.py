@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 
 import os
 import numpy as np
@@ -14,11 +15,11 @@ class ToolPlot:
         # self.markers = ['o', 's', 'D', '^', 'v', '>']
         # self.line_styles = ['-', '-', '-', '-', '-', '-']         # Solid line or dotted line format
         # self.line_widths = {value: 4.0 for value in range(0, 6)}  # setting the width of each line to 4
-        self.colors = ['red', 'limegreen', 'purple', 'blue', 'cyan', 'green']  # Line color
+        self.colors = ['red', 'limegreen', 'purple', 'blue', 'cyan', 'green', 'black', 'yellow', 'gray', 'lime']  # Line color
         self.titles = ['PCFG', 'Markov']                            # Picture title
-        self.markers = ['s', 'o', 'v', '^', 'D', None]
-        self.line_styles = ['--', '--', '-.', ':', 'dotted', '--']   # Solid line or dotted line format
-        self.line_widths = {0: 1.5, 1: 1.5, 2: 1.5, 3: 1.5, 4: 1.5, 5: 1.5}
+        self.markers = ['s', 'o', '^', 'v', '+', 'd', '>', '<', '*', 'x']
+        self.line_styles = ['--', '--', '-.', ':', 'dotted', '--', '-.', '-', '-', '-']   # Solid line or dotted line format
+        self.line_widths = {0: 1.5, 1: 1.5, 2: 1.5, 3: 1.5, 4: 1.5, 5: 1.5, 6: 1.5, 7: 1.5, 8: 1.5, 9: 1.5}
         self.font_size = 12
 
         self.list_labels = list_labels                              # Label list
@@ -64,6 +65,6 @@ class ToolPlot:
         plt.xlabel('Characters')
         plt.ylabel('Occurrence Percentage')
         plt.savefig(os.path.join(self.save_path_dir, 'result.png'))                     # plot_path + 'result.png'
-        print('Picture：', self.save_path_dir + '/result.png ', 'saved successfully.')
+        print('Picture:', self.save_path_dir + '/result.png ', 'saved successfully.')
         plt.show()
 
