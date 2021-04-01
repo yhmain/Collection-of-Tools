@@ -70,14 +70,14 @@ class ToolFile:
         self.test = 1
         char_total = 0
         char_dict = {}
-        for c in range(48, 58):
-            char_dict[chr(c)] = 0
+        # for c in range(48, 58):
+            # char_dict[chr(c)] = 0
         for c in range(0, 26):
             char_dict[chr(c + 65)] = 0
             char_dict[chr(c + 97)] = 0
         specials = "`~!@#$%^&*()_-+={}[]|\\:;\"'<>,.?/"
-        for c in specials:
-            char_dict[c] = 0
+        # for c in specials:
+            # char_dict[c] = 0
         # print(len(char_dict))           # SIZE:94
         with open(file, 'r', encoding='utf-8-sig') as f:
             for line in f:
@@ -107,7 +107,7 @@ class ToolFile:
         print('-' * 10, 'Status: Start counting the word frequency of file {0}'.format(file), '-' * 10)
         with open(file, 'r', encoding='UTF-8') as f:
             for line in f:
-                line = line.strip('\n')
+                line = line.strip('\n').strip()
                 total_num += 1
                 word_freq[line] += 1
         if val == "FREQUENCY":
@@ -119,9 +119,10 @@ class ToolFile:
     '''
         Sort the dictionary in descending order by value
     '''
-    def sort_dict_by_val(self, my_dict):
+    def sort_dict_by_val(self, my_dict, n=0):
         self.test = 1
-        n = len(my_dict)
+        if n == 0:
+            n = len(my_dict)
         L = sorted(my_dict.items(), key=lambda item: item[1], reverse=True)
         L = L[:n]
         new_dict = {}
