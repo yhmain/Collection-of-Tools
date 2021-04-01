@@ -35,3 +35,9 @@ digit_analysi.py
 Tool5:  
 special_analysis.py  
 1.Analyze the situation of password protected Special and Upper Letter string in password dataset.
+
+Tool6:
+tool_topN.py  Take out the top N passwords in the data set.  
+1.If you want to use it, please import tool_file.py  
+2.The result is shown in figure  
+![image](https://github.com/yhmain/Collection-of-Tools/blob/main/Pictures/topN.png)
