@@ -107,7 +107,9 @@ class ToolFile:
         print('-' * 10, 'Status: Start counting the word frequency of file {0}'.format(file), '-' * 10)
         with open(file, 'r', encoding='UTF-8') as f:
             for line in f:
-                line = line.strip('\n').strip()
+                line = line.strip('\n')
+                if line == '':
+                  continue
                 total_num += 1
                 word_freq[line] += 1
         if val == "FREQUENCY":
