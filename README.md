@@ -27,3 +27,11 @@ Tool3:
 tool_wordcloud.py  
 1.Read a data set and draw word cloud according to word frequency display.
 ![image](https://github.com/yhmain/Collection-of-Tools/blob/main/Pictures/wordcloud.png)
+
+Tool4:  
+digit_analysi.py  
+1.Analyze the situation of password protected digit string in password dataset.
+
+Tool5:  
+special_analysis.py  
+1.Analyze the situation of password protected Special and Upper Letter string in password dataset.
