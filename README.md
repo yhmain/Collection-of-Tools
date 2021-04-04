@@ -42,3 +42,10 @@ tool_topN.py  Take out the top N passwords in the data set.
 1.If you want to use it, please import tool_file.py  
 2.The result is shown in figure  
 ![image](https://github.com/yhmain/Collection-of-Tools/blob/main/Pictures/topN.png)
+
+Tool7:
+tool_pwd_key_pattern.py  
+1.Analyze the keyboard mode of a password  
+2.Four kinds of returned results: 'NO_PATTERN', 'SAME_ROW', 'ZIG_ZAG', 'SNAKE'  
+3.The result is shown in figure  
+![image](https://github.com/yhmain/Collection-of-Tools/blob/main/Pictures/keyPattern.png)
