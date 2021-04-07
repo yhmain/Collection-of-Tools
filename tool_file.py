@@ -152,4 +152,24 @@ class ToolFile:
         self.test = 1
         res = [list(my_dict.keys()), list(my_dict.values())]
         return res
+    
+    '''
+        Find the reverse order number of two lists A and B.
+    '''
+    def get_inv_number(self, template, target):
+        self.test = 1
+        temp_dict = {}
+        for i in range(len(template)):
+            temp_dict[template[i]] = i
+        ans = 0
+        n = len(target)
+        for i in range(n):
+            for j in range(i):
+                if target[i] not in temp_dict.keys() or target[j] not in temp_dict.keys():
+                    # print('NOt in : ', target[i], target[j])
+                    ans += 1
+                else:
+                    if temp_dict[target[j]] > temp_dict[target[i]]:
+                        ans += 1
+        return ans
 
