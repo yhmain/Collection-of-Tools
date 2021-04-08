@@ -172,4 +172,18 @@ class ToolFile:
                     if temp_dict[target[j]] > temp_dict[target[i]]:
                         ans += 1
         return ans
+    
+    '''
+        Read data from Excel
+        And get inversion number
+    '''
+    def read_excel_data(self, file):
+        self.test = 1
+        df = pd.read_excel(file, engine='openpyxl')
+        resolve_dict = {}
+        for k, v in df.items():
+            resolve_dict[k] = list(v)[:5]
+        for temp_k in resolve_dict.keys():
+            for target_k in resolve_dict.keys():
+                print(temp_k, ' To  ', target_k, '  ', self.get_inv_number(resolve_dict[temp_k], resolve_dict[target_k]))
 
