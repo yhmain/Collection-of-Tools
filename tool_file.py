@@ -128,24 +128,17 @@ class ToolFile:
     '''
         counting word frequency in text files
         the results are in json format
+        @:param data   type:dict
     '''
-    def dict_to_json(self, data):
-        self.test = 1
-        json_data = json.dumps(data, ensure_ascii=False)
-        return json_data
-
-    '''
-        counting word frequency in text files
-        the results are in json format
-    '''
-    def json_to_file(self, data, file):
+    def dict_to_file(self, data, file):
         self.test = 1
         with open(file, mode='w', encoding='utf-8') as f:
             json.dump(data, f)
 
     '''
-        counting word frequency in text files
-        the results are in json format
+        read json file
+        the results are in dict format
+        @:return file_dict: dict
     '''
     def json_to_dict(self, file):
         self.test = 1
