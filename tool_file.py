@@ -5,6 +5,7 @@ import os
 import shutil
 import collections
 import pandas as pd
+import json
 
 
 class ToolFile:
@@ -123,6 +124,34 @@ class ToolFile:
                 word_freq[k] = round(v / total_num, decimal)
         print('-' * 10, 'Status: Word frequency statistics of file {0} finished'.format(file), '-' * 10, '\n')
         return total_num, word_freq
+
+    '''
+        counting word frequency in text files
+        the results are in json format
+    '''
+    def file_to_json(self, file):
+        _, file_dict = self.file_to_dict(file)
+        json_data = json.dumps(file_dict, ensure_ascii=False)
+        return json_data
+
+    '''
+        counting word frequency in text files
+        the results are in json format
+    '''
+    def json_to_file(self, data, file):
+        self.test = 1
+        with open(file, mode='w', encoding='utf-8') as f:
+            json.dump(data, f)
+
+    '''
+        counting word frequency in text files
+        the results are in json format
+    '''
+    def json_to_dict(self, file):
+        self.test = 1
+        with open(file, mode='r', encoding='utf-8') as f:
+            file_dict = json.load(f)
+        return file_dict
 
     '''
         Sort the dictionary in descending order by value
