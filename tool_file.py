@@ -129,9 +129,9 @@ class ToolFile:
         counting word frequency in text files
         the results are in json format
     '''
-    def file_to_json(self, file):
-        _, file_dict = self.file_to_dict(file)
-        json_data = json.dumps(file_dict, ensure_ascii=False)
+    def dict_to_json(self, data):
+        self.test = 1
+        json_data = json.dumps(data, ensure_ascii=False)
         return json_data
 
     '''
